@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author tomyv
  */
-public class All {
+public class Puerto {
 
     public void menu() {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
@@ -25,10 +25,11 @@ public class All {
         int flag = 0;
         do {
             System.out.println("¿Que tipo de embarcacion posee?");
-            System.out.println("1- Lancha ");
-            System.out.println("2- Yate");
-            System.out.println("3- Velero");
-            System.out.println("4- Otro");
+            System.out.println("1 - Lancha ");
+            System.out.println("2 - Yate");
+            System.out.println("3 - Velero");
+            System.out.println("4 - Otro");
+            System.out.println("5 - Salir");
             int opc = sc.nextInt();
             Alquiler al = new Alquiler();
             al.crearAlquiler();
@@ -55,6 +56,9 @@ public class All {
                     al.setBar(new Barco());
                     suma = al.getDiff() * al.getBar().getEslora() * 10;
                     System.out.println("El Alquiler de su Barco es de $" + suma);
+                    break;
+                case 5:
+                    System.out.println("Saliendo.........");
                     break;
                 default:
                     System.out.println("Opcion Incorrecta");

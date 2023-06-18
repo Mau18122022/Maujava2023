@@ -5,7 +5,8 @@
  */
 package Main;
 
-import Service.All;
+
+import Service.Puerto;
 
 /**
  *
@@ -47,8 +48,8 @@ public class EX_1 {
      */
     public static void main(String[] args) {
         
-        All a = new All();
-        a.menu();
+        Puerto puer = new Puerto();
+        puer.menu();
 
     }
 

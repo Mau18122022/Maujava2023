@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EJ_2">
+  <ClassDiagramComponents>
+    <Class name="Electrodomesticos" package="Entidades" visibility="public" xPosition="630.0" yPosition="401.0">
+      <Fields>
+        <Field name="price" type="Double" visibility="protected"/>
+        <Field name="colour" type="String" visibility="protected"/>
+        <Field name="consElec" type="char" visibility="protected"/>
+        <Field name="height" type="Integer" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Double" name="price"/>
+          <Argument type="String" name="colour"/>
+          <Argument type="char" name="consElec"/>
+          <Argument type="Integer" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPrice" returnType="Double" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="Double" name="price"/>
+        </Method>
+        <Method name="getColour" returnType="String" visibility="public"/>
+        <Method name="setColour" returnType="void" visibility="public">
+          <Argument type="String" name="colour"/>
+        </Method>
+        <Method name="getConsElec" returnType="char" visibility="public"/>
+        <Method name="setConsElec" returnType="void" visibility="public">
+          <Argument type="char" name="consElec"/>
+        </Method>
+        <Method name="getHeight" returnType="Integer" visibility="public"/>
+        <Method name="setHeight" returnType="void" visibility="public">
+          <Argument type="Integer" name="height"/>
+        </Method>
+        <Method name="comprobarConsumoEnergetico" returnType="char" visibility="public">
+          <Argument type="char" name="a"/>
+        </Method>
+        <Method name="comprobarColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="crearElectrodomestico" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Lavadora" package="Entidades" visibility="public" xPosition="1160.0" yPosition="38.0">
+      <Fields>
+        <Field name="carga" type="Integer" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="carga"/>
+          <Argument type="Double" name="price"/>
+          <Argument type="String" name="colour"/>
+          <Argument type="char" name="consElec"/>
+          <Argument type="Integer" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCarga" returnType="Integer" visibility="public"/>
+        <Method name="setCarga" returnType="void" visibility="public">
+          <Argument type="Integer" name="carga"/>
+        </Method>
+        <Method name="crearLavadora" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Televisor" package="Entidades" visibility="public" xPosition="25.0" yPosition="19.0">
+      <Fields>
+        <Field name="resolucion" type="Integer" visibility="protected"/>
+        <Field name="sintTDT" type="Boolean" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="resolucion"/>
+          <Argument type="Boolean" name="sintTDT"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="resolucion"/>
+          <Argument type="Boolean" name="sintTDT"/>
+          <Argument type="Double" name="price"/>
+          <Argument type="String" name="colour"/>
+          <Argument type="char" name="consElec"/>
+          <Argument type="Integer" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getResolucion" returnType="Integer" visibility="public"/>
+        <Method name="setResolucion" returnType="void" visibility="public">
+          <Argument type="Integer" name="resolucion"/>
+        </Method>
+        <Method name="getSintTDT" returnType="Boolean" visibility="public"/>
+        <Method name="setSintTDT" returnType="void" visibility="public">
+          <Argument type="Boolean" name="sintTDT"/>
+        </Method>
+        <Method name="crearTelevisor" returnType="void" visibility="public"/>
+        <Method name="precioFinal" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EJ_2" package="Main" visibility="public" xPosition="761.0" yPosition="104.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entidades.Televisor" target="Entidades.Electrodomesticos"/>
+    <IsRelation name="is" source="Entidades.Lavadora" target="Entidades.Electrodomesticos"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EJ_1">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="Entidades" visibility="public" xPosition="424.0" yPosition="3.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="food" type="String" visibility="protected"/>
+        <Field name="age" type="Integer" visibility="protected"/>
+        <Field name="raza" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="raza"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="alimentarse" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Caballo" package="Entidades" visibility="public" xPosition="41.0" yPosition="417.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="raza"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Gato" package="Entidades" visibility="public" xPosition="430.0" yPosition="417.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="raza"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Perro" package="Entidades" visibility="public" xPosition="809.0" yPosition="417.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="food"/>
+          <Argument type="Integer" name="age"/>
+          <Argument type="String" name="raza"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="EJ_1" package="Main" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entidades.Gato" target="Entidades.Animal"/>
+    <IsRelation name="is" source="Entidades.Perro" target="Entidades.Animal"/>
+    <IsRelation name="is" source="Entidades.Caballo" target="Entidades.Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

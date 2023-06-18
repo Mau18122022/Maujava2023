@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EX_1">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="Entidades" visibility="public" xPosition="198.0" yPosition="38.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="fechaAlq" type="Date" visibility="private"/>
+        <Field name="fechaDev" type="Date" visibility="private"/>
+        <Field name="pos" type="int" visibility="private"/>
+        <Field name="bar" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Barco" package="Entidades" visibility="public" xPosition="409.0" yPosition="341.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lancha" package="Entidades" visibility="public" xPosition="74.0" yPosition="290.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="Entidades" visibility="public" xPosition="142.0" yPosition="495.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Yate" package="Entidades" visibility="public" xPosition="673.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="EX_1" package="Main" visibility="public" xPosition="548.0" yPosition="206.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="bar" source="Entidades.Alquiler" target="Entidades.Barco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

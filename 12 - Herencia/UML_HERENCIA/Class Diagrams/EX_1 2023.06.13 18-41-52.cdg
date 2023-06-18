@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EX_1">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="Entidades" visibility="public" xPosition="115.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="dni" type="Integer" visibility="protected"/>
+        <Field name="fechaAlq" type="Date" visibility="protected"/>
+        <Field name="fechaDev" type="Date" visibility="protected"/>
+        <Field name="posAmarre" type="Integer" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="Date" name="fechaAlq"/>
+          <Argument type="Date" name="fechaDev"/>
+          <Argument type="Integer" name="posAmarre"/>
+          <Argument type="Integer" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="Entidades" visibility="public" xPosition="348.0" yPosition="332.0">
+      <Fields>
+        <Field name="matricula" type="Integer" visibility="protected"/>
+        <Field name="eslora" type="Integer" visibility="protected"/>
+        <Field name="anioFabricacion" type="Date" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarcoMotor" package="Entidades" visibility="public" xPosition="860.0" yPosition="265.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="Entidades" visibility="public" xPosition="76.0" yPosition="365.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Yate" package="Entidades" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="EX_1" package="Main" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Entidades.Alquiler" target="Entidades.Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -24,6 +24,12 @@ public class Electrodomestico {
     public Electrodomestico() {
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    
+    
     public Electrodomestico(Double price, String colour, char consElec, Integer height) {
         this.price = price;
         this.colour = colour;

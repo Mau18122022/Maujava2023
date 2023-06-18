@@ -14,8 +14,10 @@ public class Fravega {
     public void menu() {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         Electrodomestico e = new Electrodomestico();
+        Double suma = 0d;
         Boolean flag = true;
         String cont = "";
+        int c = 0;
         do {
             flag = true;
             System.out.println("¿QUE ELECTRODOMESTICO DESEA SABER SU PRECIO?");
@@ -40,15 +42,20 @@ public class Fravega {
                     flag = false;
                     break;
             }
-
             if (flag) {
                 System.out.println("SU PRECIO ES " + e.precioFinal());
+                suma = suma + e.getPrice();
+                c++;
                 System.out.println("----------------------------------------------");
                 System.out.println("¿CONTINUAR?");
                 cont = sc.next();
             }
             
         } while (flag && "s".equalsIgnoreCase(cont));
+        
+        if(c>1){
+            System.out.println("EL PRECIO TOTAL ES DE " + suma);
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class Student extends Person {
     }
 
     public Student(List subject, Boolean pay, String completeName, Integer id,
-            MaritalStatus est, Integer age, Sex s, Integer cellNum, String adress, Integer adressNum, String nationality) {
+            MaritalStatus est, Integer age, Sex s, Long cellNum, String adress, Integer adressNum, String nationality) {
         super(completeName, id, est, age, s, cellNum, adress, adressNum, nationality);
         this.subject = subject;
         this.pay = pay;

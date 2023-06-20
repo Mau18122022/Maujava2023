@@ -18,7 +18,7 @@ public class Employee extends Person {
     }
 
     public Employee(Integer yearEnter, Integer office, String completeName, Integer id, MaritalStatus est, Integer age,
-            Sex s, Integer cellNum, String adress, Integer adressNum, String nationality) {
+            Sex s, Long cellNum, String adress, Integer adressNum, String nationality) {
         super(completeName, id, est, age, s, cellNum, adress, adressNum, nationality);
         this.yearEnter = yearEnter;
         this.office = office;

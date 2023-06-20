@@ -23,7 +23,7 @@ public class Teacher extends Employee {
 
     public Teacher(Deanships dep, Integer yearEnter, Integer office,
             String completeName, Integer id, MaritalStatus est, Integer age,
-            Sex s, Integer cellNum, String adress, Integer adressNum, String nationality) {
+            Sex s, Long cellNum, String adress, Integer adressNum, String nationality) {
         super(yearEnter, office, completeName, id, est, age, s, cellNum, adress, adressNum, nationality);
         this.dep = dep;
     }

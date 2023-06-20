@@ -1,10 +1,16 @@
 package Service;
 
+import Comparadores.Comparators;
 import Entidades.Person;
 import Entidades.Staff;
 import Entidades.Student;
 import Entidades.Teacher;
+import static Enums.MaritalStatus.MARRIED;
+import static Enums.MaritalStatus.SINGLE;
+import static Enums.Sex.MEN;
+import static Enums.Sex.WOMEN;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,10 +23,18 @@ public class University {
     private List<Person> people = new ArrayList();
     private Scanner sc = new Scanner(System.in).useDelimiter("\n");
     private Person p;
+    private Boolean flagOpt = true;
+    private Boolean flagRes = true;
+    private Boolean flagEmp = true;
+    private Boolean flagChan = true;
+    private Boolean flagSee = true;
 
     public void options() {
-        Boolean flag = true;
-        do {
+        //List subject, Boolean pay, String completeName, Integer id,
+        //MaritalStatus est, Integer age, Sex s, Long cellNum, String adress, Integer adressNum, String nationality
+        people.add(new Student(null, true, "TOMAS LARA", 45612200, SINGLE, 19, MEN, 1125399048l, "LOPEZ BUCHARDO", 1476, "ARGENTINA"));
+        people.add(new Student(null, true, "VALEN DARTES", 42212200, SINGLE, 20, WOMEN, 1125399048l, "JULIAN ALVAREZ", 16, "ARGENTINA"));
+        while (flagOpt) {
             System.out.println("WHAT DO YOU WISH TO DO? ");
             System.out.println("1 - REGISTER ");
             System.out.println("2 - CHANGE DATA ");
@@ -39,22 +53,26 @@ public class University {
                     }
                     break;
                 case 3:
-                    seeData();
+                    if (people.isEmpty()) {
+                        System.out.println("NOTHING REGISTERED");
+                    } else {
+                        seeData();
+                    }
                     break;
                 case 4:
                     System.out.println("BYE.............. ");
-                    flag = false;
+                    flagOpt = false;
                     break;
                 default:
                     System.out.println("INCORRECT ");
+                    break;
             }
-        } while (flag);
+        }
 
     }
 
     public void register() {
-        Boolean flag = true;
-        do {
+        while (flagRes) {
             System.out.println("1 - STUDENT ");
             System.out.println("2 - EMPLOYEE ");
             System.out.println("3 - COME-BACK ");
@@ -67,20 +85,25 @@ public class University {
                     break;
                 case 2:
                     createEmployee();
+                    break;
                 case 3:
                     System.out.println("COMING BACK.........");
-                    flag = false;
-                    options();
+                    flagRes = false;
+                    break;
                 default:
                     System.out.println("ERROR");
+                    break;
             }
-        } while (flag);
+        }
+
+        if (flagRes == false) {
+            options();
+        }
 
     }
 
     public void createEmployee() {
-        Boolean flag = true;
-        do {
+        while (flagEmp) {
             System.out.println("1 - TEACHER ");
             System.out.println("2 - STAFF ");
             System.out.println("3 - RETURN ");
@@ -97,13 +120,18 @@ public class University {
                     break;
                 case 3:
                     System.out.println("COMING BACK.........");
-                    register();
-                    flag = false;
+                    flagEmp = false;
                     break;
                 default:
                     System.out.println("INCORRECT");
+                    break;
             }
-        } while (flag);
+        }
+
+        if (flagEmp == false) {
+            register();
+        }
+
     }
 
     public void changeData() {
@@ -120,27 +148,25 @@ public class University {
          *
          * • Traslado de sección de un empleado del personal de servicio.
          */
-        
-        Boolean flag = true;
-        
-        while (flag) {
-            
+
+
+        while (flagChan) {
+
             System.out.println("WHAT'S THE NAME");
             String name = sc.next();
-            
+
             for (Person aux : people) {
 
                 if (name.equalsIgnoreCase(aux.getCompleteName())) {
                     System.out.println("WHAT DO YOU WISH TO CHANGE");
                     System.out.println("1 - NEW MARITAL STATUS");
-                    flag = false;
-                    
+
                     if (aux instanceof Staff) {
                         System.out.println("2 - NEW SECCION");
                         System.out.println("3 - BE BACK");
                         Staff st = (Staff) aux;
                         switch (sc.nextInt()) {
-                            case 1:             
+                            case 1:
                                 st.changeRelationship();
                                 System.out.println("DONE IT");
                                 break;
@@ -149,7 +175,7 @@ public class University {
                                 System.out.println("DONE IT");
                             case 3:
                                 System.out.println("COMING BACK...........");
-                                options();
+                                flagChan = false;
                                 break;
                             default:
                                 System.out.println("ERROR");
@@ -170,7 +196,7 @@ public class University {
                                 System.out.println("DONE IT");
                             case 3:
                                 System.out.println("COMING BACK...........");
-                                options();
+                                flagChan = false;
                                 break;
                             default:
                                 System.out.println("ERROR");
@@ -191,7 +217,7 @@ public class University {
                                 System.out.println("DONE IT");
                             case 3:
                                 System.out.println("COMING BACK...........");
-                                options();
+                                flagChan = false;
                                 break;
                             default:
                                 System.out.println("ERROR");
@@ -199,16 +225,111 @@ public class University {
                     }
 
                 }
-                
+
             }
-            
+
+        }
+
+        if (flagChan == false) {
+            options();
         }
 
     }
 
     public void seeData() {
-        for (Person aux : people) {
-            System.out.println(aux);
+        Boolean check;
+        while (flagSee) {
+            System.out.println("WHAT DO YOU WISH?");
+            System.out.println("1 - ORDEN BY NAME");
+            System.out.println("2 - ORDEN BY AGE");
+            System.out.println("3 - OBSERVE MEN");
+            System.out.println("4 - OBSERVE WOMEN");
+            System.out.println("5 - SEE STUDENTS");
+            System.out.println("6 - SEE STAFF");
+            System.out.println("7 - SEE TEACHERS");
+            System.out.println("8 - RETURN");
+            check = true;
+            switch (sc.nextInt()) {
+                case 1:
+                    Collections.sort(people, Comparators.orderByName);
+                    for (Person aux : people) {
+                        System.out.println(aux);
+                    }
+                    break;
+                case 2:
+                    Collections.sort(people, Comparators.orderByDni);
+                    for (Person aux : people) {
+                        System.out.println(aux);
+                    }
+                    break;
+                case 3:
+                    for (Person aux : people) {
+                        if (aux.getS() == MEN) {
+                            System.out.println(aux);
+                            check = false;
+                        }
+                    }
+
+                    if (check) {
+                        System.out.println("NO MEN REGISTERED");
+                    }
+                    break;
+                case 4:
+                    for (Person aux : people) {
+                        if (aux.getS() == WOMEN) {
+                            System.out.println(aux);
+                            check = false;
+                        }
+                    }
+
+                    if (check) {
+                        System.out.println("NO WOMEN REGISTERED");
+                    }
+                    break;
+                case 5:
+                    for (Person aux : people) {
+                        if (aux instanceof Student) {
+                            System.out.println(aux);
+                            check = false;
+                        }
+                    }
+
+                    if (check) {
+                        System.out.println("NO STUDENTS REGISTERED");
+                    }
+                    break;
+                case 6:
+                    for (Person aux : people) {
+                        if (aux instanceof Staff) {
+                            System.out.println(aux);
+                            check = false;
+                        }
+                    }
+
+                    if (check) {
+                        System.out.println("NO STAFF REGISTERED");
+                    }
+                    break;
+                case 7:
+                    for (Person aux : people) {
+                        if (aux instanceof Teacher) {
+                            System.out.println(aux);
+                            check = false;
+                        }
+                    }
+
+                    if (check) {
+                        System.out.println("NO TECHERS REGISTERED");
+                    }
+
+                    break;
+                case 8:
+                    options();
+                    flagSee = false;
+                    break;
+                default:
+                    System.out.println("ERROR");
+            }
         }
     }
 }

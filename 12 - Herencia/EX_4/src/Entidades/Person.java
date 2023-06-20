@@ -16,7 +16,7 @@ public class Person {
     protected MaritalStatus est;
     protected Integer age;
     protected Sex s;
-    protected Integer cellNum;
+    protected Long cellNum;
     protected String adress;
     protected Integer adressNum;
     protected String nationality;
@@ -24,7 +24,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(String completeName, Integer id, MaritalStatus est, Integer age, Sex s, Integer cellNum, String adress, Integer adressNum, String nationality) {
+    public Person(String completeName, Integer id, MaritalStatus est, Integer age, Sex s, Long cellNum, String adress, Integer adressNum, String nationality) {
         this.completeName = completeName;
         this.id = id;
         this.est = est;
@@ -39,6 +39,15 @@ public class Person {
     public String getCompleteName() {
         return completeName;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Sex getS() {
+        return s;
+    }
+    
 
     public Person createPerson() {
 
@@ -80,7 +89,7 @@ public class Person {
         }
 
         System.out.println("NUMBER");
-        this.cellNum = sc.nextInt();
+        this.cellNum = sc.nextLong();
 
         System.out.println("ADRESS DIRECTION");
         this.adress = sc.next();

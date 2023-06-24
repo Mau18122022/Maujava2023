@@ -26,7 +26,6 @@ public class DivisionNumero {
         }finally{
             System.out.println("BYE.............");
         }
-        System.out.println("ssihisa");
     }
 
 }
